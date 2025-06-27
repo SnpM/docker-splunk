@@ -9,3 +9,5 @@ splunk-ansible
 *clair-scanner*
 .env
 venv
+
+*vulns.txt

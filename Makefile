@@ -160,26 +160,7 @@ bare-redhat-8: base-redhat-8
 		--target bare -t bare-redhat-8:${IMAGE_VERSION} .
 
 ##### Splunk images #####
-splunk: ansible splunk-debian-9 splunk-debian-10 splunk-centos-7 splunk-centos-8 splunk-redhat-8 splunk-redhat-9
-
-splunk-debian-9: base-debian-9 ansible
-	docker build ${DOCKER_BUILD_FLAGS} \
-		-f splunk/common-files/Dockerfile \
-		--build-arg SPLUNK_BASE_IMAGE=base-debian-9 \
-		--build-arg SPLUNK_BUILD_URL=${SPLUNK_LINUX_BUILD_URL} \
-		-t splunk-debian-9:${IMAGE_VERSION} .
-
-splunk-debian-10: base-debian-10 ansible
-	docker build ${DOCKER_BUILD_FLAGS} \
-		-f splunk/common-files/Dockerfile \
-		--build-arg SPLUNK_BASE_IMAGE=base-debian-10 \
-		--build-arg SPLUNK_BUILD_URL=${SPLUNK_LINUX_BUILD_URL} \
-		-t splunk-debian-10:${IMAGE_VERSION} .
-
-splunk-centos-7: base-centos-7 ansible
-	docker build ${DOCKER_BUILD_FLAGS} \
-		-f splunk/common-files/Dockerfile \
-		--build-arg SPLUNK_BASE_IMAGE=base-centos-7 \
+splunk: ansible splunk-debian-9 splunk-debian-10 splunk-centos-7 splunk-centoclear
 		--build-arg SPLUNK_BUILD_URL=${SPLUNK_LINUX_BUILD_URL} \
 		-t splunk-centos-7:${IMAGE_VERSION} .
 
